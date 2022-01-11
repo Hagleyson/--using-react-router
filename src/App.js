@@ -1,4 +1,4 @@
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import MainHeader from "./components/MainHeader";
 import Products from "./pages/products";
 import Welcome from "./pages/Welcome";
@@ -9,6 +9,9 @@ function App() {
       <MainHeader />
       <main>
         <Switch>
+          <Route path={"/"} exact>
+            <Redirect to={"/welcome"} />
+          </Route>
           <Route path="/welcome">
             <Welcome />
           </Route>
